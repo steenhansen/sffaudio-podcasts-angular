@@ -36,7 +36,7 @@ describe('Podcast Directive - ', function () {
     it("normal speed, in 10 seconds, 10 seconds is played", function () {
         element(by.id('normal_rate')).click();
         browser.wait(wait_milli_seconds(speed_time_frame_10s));
-        expect(element(by.binding('my_currentTime')).getText()).toMatch('10s');  
+        expect(element(by.binding('my_currentTime')).getText()).toMatch('10s');
     });
 
     it("quick speed, in 10 seconds, 12 seconds is played", function () {

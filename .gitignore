@@ -2,3 +2,5 @@
 *.sass-cache
 /node_modules/*
 /podcast_bower/*
+!/node_modules/readme.txt
+!/podcast_bower/readme.txt
