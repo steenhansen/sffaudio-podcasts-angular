@@ -1,0 +1,150 @@
+
+
+<table style="width:100%" align="center" ><tr><td>
+
+    <a id='my_back_arrow_link' ng-click="gotoHomeUrl()" ><div class="icon-link"><svg class="back-arrow-plain"><use xlink:href="#shape-back-arrow" /></svg><svg class="back-arrow-blue"><use xlink:href="#shape-back-arrow-blue" /></svg></div></a>
+
+</td><td>
+    <h6>
+        <a id='my_back_link' ng-href="#/" > <span class='back-to-audio-list'>The SFFaudio Podcast</span></a>
+        #<span id="id_padded_podcast" ng-bind="the_padded_podcast_id"></span>
+    </h6>
+</td></tr></table>
+
+
+<table style="width:100%" align="center" >
+    <tr><td>
+
+
+
+
+
+
+    <button  id='my_play_button' ng-click='pressPlayPause()' class="audio-player-width play-podcast" style="font-size:200%">
+
+
+        <span ng-bind="play_button_text"></span> at <span ng-bind="my_currentTime | trackTime"></span>
+
+
+    </button>
+
+
+
+
+<br>
+
+
+         <table style="width:100%;" align="center">
+            <tr style="height:70px">
+                <td align="center" width="20%" style="height:100px">
+                    <button  id="my_backward_30" class="forward_backward" style="height:45px; width:60px; padding:0;" ng-click="moveForwardSeconds(-30); ">Back<br>30&nbsp;sec</button>
+                </td>
+                <td align="center" width="20%">
+                    <button id="my_backward_15" class="forward_backward" style="height:45px; width:60px; padding:0;" ng-click="moveForwardSeconds(-15); ">Back<br>15&nbsp;sec</button>
+                </td>
+                <td align="center" width="20%">
+                    <img id='my_error_img' src='/podcast_views/error.gif' style="margin:0;" class="not-error"  ng-class="{'have-error' : !have_error}" >
+
+                    <img  id='my_busy_img' src='/podcast_views/busy.gif' style="margin:0;" class="not-busy"  ng-class="{'busy-waiting' : !busy_waiting}" >
+                </td>
+                <td align="center" width="20%">
+                    <button  id="my_forward_30" class="forward_backward" style="height:45px; width:60px; padding:0;" ng-click=" moveForwardSeconds(30); ">Forward<br>30&nbsp;sec</button>
+                </td>
+                <td align="center" width="20%">
+                    <button id="my_forward_120" class="forward_backward"  style="height:45px; width:60px; padding:0;" ng-click=" moveForwardSeconds(120); ">Forward<br>2&nbsp;min</button>
+                </td>
+            </tr>
+        </table>
+
+
+
+
+
+       <table style="width:100%" align="center">
+           <tr>
+               <td align="center" width="24%">
+                   <input type="radio" ng-model="audio.playbackRate" value='0.75' id="slow_rate">
+                   <label for="slow_rate">Slow<br>0.75x</label>
+               </td>
+               <td align="center" width="28%">
+                   <input type="radio" ng-model="audio.playbackRate" value='1' id="normal_rate">
+                   <label for="normal_rate">Normal<br>1x</label>
+               </td>
+               <td align="center" width="24%">
+                   <input type="radio" ng-model="audio.playbackRate" value='1.25' id="quick_rate">
+                   <label for="quick_rate" >Quick<br>1.25x</label>
+               </td>
+               <td align="center" width="24%">
+                   <input type="radio" ng-model="audio.playbackRate" value='1.5' id="fast_rate" >
+                   <label for="fast_rate" >Fast<br>1.5x</label>
+               </td>
+           </tr>
+
+       </table>
+
+
+
+           <table style="width:80%" align="center">
+               <tr><td>
+       <input type="range" min="0" max="1" step="0.001" style="display:none" ng-model='audio.progress'>
+
+       <input id="my_progress_slider" class='audio-player-width' type="range" min="0" max="1" step="0.001" ng-change="moveMyProgressSlider()" ng-model='my_audio_progress' >
+               </td>
+               </tr>
+
+           </table>
+
+
+
+
+
+
+        <div my-svg-icons style="display:none"></div>
+   <table style="width:100%" align="center">
+           <tr>
+               <td align="center" width="33%">
+                   <a  id='my_download_link' ng-click="gotoDownloadUrl()"><div class="icon-link">
+                       <svg class="download-plain"><use xlink:href="#shape-download" /></svg>
+                       <svg class="download-blue"><use xlink:href="#shape-download-blue" /></svg>
+                    </div></a>
+
+
+
+
+               </td>
+               <td align="center" width="33%">
+
+
+                   <a id='my_wordpress_post'  ng-click="gotoWordPressUrl()"><div class="icon-link">
+                           <svg class="wordpress-page-plain"><use xlink:href="#shape-webpage" /></svg>
+                       <svg class="wordpress-page-blue"><use xlink:href="#shape-webpage-blue" /></svg>
+                   </div></a>
+
+
+
+               </td>
+
+
+
+               <td align="center" width="33%">
+
+                   <a  id='my_twitter_link' ng-click="gotoTwitterUrl()" target="_blank"><div class="icon-link">
+                       <svg class="twitter-link-plain"><use xlink:href="#shape-twitter" /></svg>
+                       <svg class="twitter-link-blue"><use xlink:href="#shape-twitter-blue" /></svg>
+                    </div></a>
+
+               </td>
+           </tr>
+
+       </table>
+
+
+
+       </td></tr></table>
+
+
+
+
+
+
+

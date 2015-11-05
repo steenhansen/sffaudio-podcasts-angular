@@ -1,0 +1,95 @@
+
+@mixin filter-width-margins($filter_id, $filter_width_percent) {
+  .#{$filter_id} {
+    margin-left: 1%;
+    width: #{$filter_width_percent};
+    margin-right: 1%;
+  }
+}
+
+
+
+@mixin current-sort-distinction($sort_class) {
+  .#{$sort_class} {
+    font-weight: bold;
+  }
+}
+
+@include current-sort-distinction('highlight-kind-filter');
+@include current-sort-distinction('highlight-participant-filter');
+@include current-sort-distinction('highlight-played-filter');
+
+@include current-sort-distinction('highlight-id-sort');
+@include current-sort-distinction('highlight-book-sort');
+@include current-sort-distinction('highlight-narrator-sort');
+@include current-sort-distinction('highlight-author-sort');
+@include current-sort-distinction('highlight-kind-sort');
+@include current-sort-distinction('highlight-hh-mm-ss-length-sort');
+@include current-sort-distinction('highlight-local-play-state-sort');
+
+
+@include filter-width-margins('limit-audio-type', '26%');
+@include filter-width-margins('limit-audio-participant', '37%');
+@include filter-width-margins('limit-audio-played', '29%');
+
+
+.clear-all-audio {
+  float:right;
+}
+
+@include filter-width-margins('podcast-id-audio-sort', '30%');
+
+
+@include filter-width-margins('kind-audio-sort', '30%');
+
+
+
+@include filter-width-margins('book-audio-sort', '30%');
+
+@include filter-width-margins('length-audio-sort', '30%');
+
+@include filter-width-margins('narrator-audio-sort', '30%');
+
+@include filter-width-margins('author-audio-sort', '30%');
+
+@include filter-width-margins('played-state-audio', '');
+
+.sort-filter-heading{
+  height: 2px;
+  background-color: black;
+  text-align: left;
+}
+
+.sort-filter-text{
+  background-color: white;
+  position: relative;
+  top: -0.5em;
+  margin-left:22px;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+.filter_textbox{
+  width:243px;
+  margin-left:2%;
+}
+
+
+
+img{
+  margin-right:12px;
+}
+
+
+.odd_podcast_row {
+  background: #fff;
+}
+
+.even_podcast_row {
+  background: #eee;
+}
+
+
+
+
+

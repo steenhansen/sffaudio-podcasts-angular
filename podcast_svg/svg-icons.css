@@ -1,0 +1,48 @@
+.icon-link .download-plain {
+  display: block; }
+.icon-link .download-blue {
+  display: none; }
+.icon-link:hover .download-plain {
+  display: none; }
+.icon-link:hover .download-blue {
+  display: block; }
+
+.icon-link .wordpress-page-plain {
+  display: block; }
+.icon-link .wordpress-page-blue {
+  display: none; }
+.icon-link:hover .wordpress-page-plain {
+  display: none; }
+.icon-link:hover .wordpress-page-blue {
+  display: block; }
+
+.icon-link .twitter-link-plain {
+  display: block; }
+.icon-link .twitter-link-blue {
+  display: none; }
+.icon-link:hover .twitter-link-plain {
+  display: none; }
+.icon-link:hover .twitter-link-blue {
+  display: block; }
+
+.icon-link .back-arrow-plain {
+  display: block; }
+.icon-link .back-arrow-blue {
+  display: none; }
+.icon-link:hover .back-arrow-plain {
+  display: none; }
+.icon-link:hover .back-arrow-blue {
+  display: block; }
+
+.icon-link {
+  width: 48px;
+  height: 48px; }
+
+.icon-back {
+  display: inline; }
+
+div svg {
+  width: 48px;
+  height: 48px; }
+
+/*# sourceMappingURL=svg-icons.css.map */

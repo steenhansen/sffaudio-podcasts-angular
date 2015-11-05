@@ -1,0 +1,66 @@
+
+
+
+
+
+
+
+
+
+<div ng-show="is_mobile_show_header">
+    <h1>The SFFaudio Podcast</h1>
+    <p>
+        <a href="/"><img src="//www.sffaudio.com/images08/thesffaudiopodcast120x120.jpg" alt="The SFFaudio Podcast" align="left" /></a>
+        <br />
+        <strong>The SFFaudio Podcast</strong><br />
+        features discussions with SFFaudio.com contributors, cool podcasters, bloggers and scholars, conversations with people writing books, audiobooks, audio drama and comics. The episodes designated &#8220;READALONG&#8221; are in-depth conversations about one audiobook (or book). Episodes tagged &#8220;TOPIC&#8221; feature a focused discussion of a narrow subject in SFF. We also occasionally present an unabridged AUDIOBOOK as an episode.</p>
+    <p>If you have an idea for an SFFaudio Podcast episode please <a href="/cdn-cgi/l/email-protection#2a404f59594f5d43464643596a534b42454504494547">send Jesse an email</a> with the subject line: &#8220;SFFaudio Podcast&#8221;.</p>
+    <p>Podcast feed:<br />
+        <a href="http://www.sffaudio.com/feed/podcast/">http://www.sffaudio.com/feed/podcast/</a></p>
+    <p>iTunes 1-Click |<a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=290058763">SUBSCRIBE</a>|</p>
+</div>
+
+
+
+
+<div my-filter-search-buttons></div>
+
+&nbsp;<br>
+
+<table>
+    <tr ng-repeat="a_podcast in the_podcasts | filter:limit_book | filter:limit_kind  | filter:limit_participant | filter:limit_played | filter:search_query | orderBy:order_by" my-repeat-directive>
+        <td  ng-class-odd="'odd_podcast_row'" ng-class-even="'even_podcast_row'">
+
+
+                  &nbsp;
+            <a href="#/{{a_podcast.kind_fragment}}/{{a_podcast.padded_podcast_id}}"
+                  name="podcast_name_{{a_podcast.padded_podcast_id}}"
+               onclick="    podcast_module.storeLocalValue('last_podcast_name', this.name);
+                            return true; ">
+                  <span ng-class="{'highlight-id-sort' : highlight_id_sort}" ng-bind="a_podcast.the_padded_podcast_id"></span></a>
+
+            <span ng-bind="a_podcast.about_display"></span>
+
+
+
+            <span ng-class="{'highlight-book-sort' : highlight_book_sort}" ng-bind="a_podcast.book_display"></span>
+            <span ng-class="{'highlight-author-sort' : highlight_author_sort}" ng-bind="a_podcast.author_display"></span><span ng-class="{'highlight-narrator-sort' : highlight_narrator_sort}" ng-bind="a_podcast.narrator_display"></span>
+
+
+                      <br>
+
+                      <span ng-bind="a_podcast.a_or_an_kind"></span> <span ng-class="{'highlight-kind-sort' : highlight_kind_sort}" ng-bind="a_podcast.display_kind"></span> <span ng-bind="a_podcast.with_participants"></span>
+
+                <span ng-class="{'highlight-hh-mm-ss-length-sort' : highlight_hh_mm_ss_length_sort}" ng-bind="a_podcast.hh_mm_ss_length"></span>
+            <span ng-class="{'highlight-local-play-state-sort' : highlight_local_play_state_sort}" ng-bind="a_podcast.local_play_state"></span>
+
+<br>&nbsp;
+        </td>
+    </tr>
+
+
+</table>
+
+
+
+

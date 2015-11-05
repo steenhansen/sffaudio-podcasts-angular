@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SFFAudio Podcast Player</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" href="//www.sffaudio.com/wp-content/themes/revolution-code-blue2/images/favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="/podcast_views/css/all.min.css?v=2e660a3f6cbefa1d10ff7075a1412067">
+    <!--<link rel="stylesheet" href="/podcast_svg/svg-icons.css">-->
+    <!--<link rel="stylesheet" href="/podcast_views/css/app.css">-->
+    <!--<link rel="stylesheet" href="/podcast_views/episode/my-audiobook-player.css">-->
+    <!--<link rel="stylesheet" href="/podcast_views/episodes/my-filter-search.css">-->
+
+<script src="/podcast_views/all.min.js?v=d6a99488d99e1b081320120d0f868e85"></script>
+
+    <!--<script src="/podcast_bower/angular/angular.js"></script>-->
+    <!--<script src="/podcast_bower/angular-route/angular-route.js"></script>-->
+    <!--<script src="/podcast_bower/angular-audio/app/angular.audio.js"></script>-->
+    <!--<script src="/podcast_bower/angular-resource/angular-resource.js"></script>-->
+    <!--<script src="/podcast_bower/angular-touch/angular-touch.js"></script>-->
+
+    <!--<script src="/podcast_components/app.js"></script>-->
+    <!--<script src="/podcast_components/local-storage-value.js"></script>-->
+    <!--<script src="/podcast_components/object-create.js"></script>-->
+    <!--<script src="/podcast_components/podcast/podcast-service.js"></script>-->
+    <!--<script src="/podcast_components/participants/participants-service.js"></script>-->
+
+    <!--<script src="/podcast_views/episodes/episodes.js"></script>-->
+    <!--<script src="/podcast_views/episodes/episodes-module.js"></script>-->
+
+    <!--<script src="/podcast_views/episode/podcast-local-info.js"></script>-->
+    <!--<script src="/podcast_views/episode/audiobook-directive.js"></script>-->
+
+    <!--<script src="/podcast_views/episode/audiobook/audiobook.js"></script>-->
+    <!--<script src="/podcast_views/episode/audiobook-readalong/audiobook-readalong.js"></script>-->
+    <!--<script src="/podcast_views/episode/new-releases-recent-arrivals/new-releases-recent-arrivals.js"></script>-->
+    <!--<script src="/podcast_views/episode/readalong/readalong.js"></script>-->
+    <!--<script src="/podcast_views/episode/talk-to/talk-to.js"></script>-->
+    <!--<script src="/podcast_views/episode/topic/topic.js"></script>-->
+</head>
+<body>
+<script>
+    window.onerror = function (message, filename, lineno, colno, error) {
+        console.log("Uncaught error :", error);
+    };
+</script>
+    <div>
+        <div ng-view></div>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,41 @@
+@mixin svg-black-hover-blue-button($plain_name, $blue_hover_name) {
+
+    .icon-link {
+        .#{$plain_name} {
+            display: block;
+        }
+        .#{$blue_hover_name} {
+            display: none;
+        }
+        &:hover {
+            .#{$plain_name} {
+                display: none;
+            }
+            .#{$blue_hover_name} {
+                display: block;
+            }
+        }
+    }
+}
+
+@include svg-black-hover-blue-button('download-plain',       'download-blue');
+@include svg-black-hover-blue-button('wordpress-page-plain', 'wordpress-page-blue');
+@include svg-black-hover-blue-button('twitter-link-plain',   'twitter-link-blue');
+@include svg-black-hover-blue-button('back-arrow-plain',     'back-arrow-blue');
+
+$svg_button_size: 48px;
+
+.icon-link {
+    width: $svg_button_size;
+    height: $svg_button_size;
+}
+
+.icon-back{
+    display:inline;
+}
+
+div svg{
+    width: $svg_button_size;
+    height: $svg_button_size;
+}
+

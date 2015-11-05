@@ -1,0 +1,46 @@
+
+
+.play-podcast{
+  height:100px;
+  font-size:200%;
+}
+.audio-player-width{
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+.back-to-audio-list{
+  text-decoration:underline ;
+  cursor: pointer;
+  cursor : hand;
+}
+
+h6 {
+  font-size: 1.3em;
+  margin: 0;
+  //display:inline;
+}
+
+.not-busy{
+  margin:0;
+}
+
+.busy-waiting{
+  display:none;
+}
+
+.not-error{
+  margin:0;
+}
+.have-error{
+  display:none;
+}
+
+
+.forward_backward{
+  height:45px;
+  width:61px;
+  padding:0;
+}
