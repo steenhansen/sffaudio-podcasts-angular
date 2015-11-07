@@ -204,10 +204,7 @@ module.exports = function(grunt) {
                 replacement: 'all.min.css',
                 file: 'podcast_views/css/all.min.css',
                 get_param: true
-            }
-        },
-
-        'cache-busting': {
+            },
             js: {
                 replace: ['*.html'],
                 replacement: 'all.min.js',
@@ -216,12 +213,10 @@ module.exports = function(grunt) {
             }
         },
 
-
-
         watch: {
             js: {
                 files: ['podcast_components/**/*.js', 'podcast_views/**/*.js'],
-                tasks: ['uglify', 'jshint', 'cache-busting']
+                tasks: ['jshint', 'uglify', 'cache-busting']
             },
             svg:{
                 files: ['podcast_svg/*.svg'],

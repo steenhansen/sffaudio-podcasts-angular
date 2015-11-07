@@ -155,7 +155,6 @@ filter_list.controller('EpisodesCtrl', ['$scope','podcastService', 'participants
         $scope.filterHighlight('none');
         $scope.the_kinds = episodes_module.PODCAST_KINDS;
         $scope.played_states = episodes_module.PLAYED_STATES;
-
     }]);
 
 

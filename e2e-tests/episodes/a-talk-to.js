@@ -4,11 +4,11 @@ console.log('episodes/a-talk-to.js');
 
 describe('Episodes List Pieces -', function testPodcastTypes() {
     var test_home_page = 'mobile_podcasts.html#/';
-    var clear_local_storage = 'window.localStorage.clear();';
+    var test_helpers = require('../testHelpers.js');
 
     it('load page', function () {
         browser.get(test_home_page);
-        browser.executeScript(clear_local_storage);
+        test_helpers.clear_local_storage(browser);
         browser.get(test_home_page);
     });
 

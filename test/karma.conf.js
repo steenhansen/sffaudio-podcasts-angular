@@ -12,7 +12,9 @@ module.exports = function(config){
         'podcast_bower/angular-mocks/angular-mocks.js',
 
         'test/unit/testEpisodeController.js',
-        'test/unit/testServices.js'
+        'test/unit/testLocalStorageValue.js',
+        'test/unit/testPodcastLocalInfo.js',
+        'test/unit/testServices.js',
     ],
 
     autoWatch : true,

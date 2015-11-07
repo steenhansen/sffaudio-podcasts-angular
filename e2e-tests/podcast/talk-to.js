@@ -20,7 +20,6 @@ describe('A Topic Podcast -', function () {
 
 	var test_podcast_page = 'mobile_podcasts.html#/' + the_type + '/' + test_podcast_id;
 	var zero_seconds = '0s';
-	var clear_local_storage = 'window.localStorage.clear();';
 
 	var download_match = "^http:\/\/localhost:8000\/podcasts\/SFFaudioPodcast292\.mp3$";
 	var wordpress_match = "^http:\/\/www\.sffaudio\.com\/.*$";
@@ -28,24 +27,12 @@ describe('A Topic Podcast -', function () {
 
 	var wait_for_digest = 1000;
 
-	var wait_milli_seconds = function makeTimer(wait_milli_secs) {
-		var date_start = new Date();
-		var milli_secs_future = date_start.getTime() + wait_milli_secs;
-		return function () {
-			var date_now = new Date();
-			var milli_secs_now = date_now.getTime();
-			if (milli_secs_future < milli_secs_now) {
-				return true;
-			} else {
-				return false;
-			}
-		};
-	};
+	var test_helpers = require('../testHelpers.js');
 
 
 	beforeEach(function () {
 		browser.get(test_podcast_page);
-		browser.executeScript(clear_local_storage);
+		test_helpers.clear_local_storage(browser);
 		browser.get(test_podcast_page);
 	});
 
@@ -54,9 +41,9 @@ describe('A Topic Podcast -', function () {
 			beforeEach(function() {
 				browser.ignoreSynchronization=true;
 				browser.get(test_podcast_page);							// firefox bug, has to be here
-				browser.executeScript(clear_local_storage);
+				test_helpers.clear_local_storage(browser);
 				browser.get(test_podcast_page);
-				browser.wait(wait_milli_seconds(wait_for_digest));
+				browser.wait(test_helpers.wait_milli_seconds(wait_for_digest));
 			});
 			it("download should be there, TALK-TO", function() {
 				element(by.id('my_download_link')).click();
@@ -73,9 +60,9 @@ describe('A Topic Podcast -', function () {
 			beforeEach(function() {
 				browser.ignoreSynchronization=true;
 				browser.get(test_podcast_page);							// firefox bug, has to be here
-				browser.executeScript(clear_local_storage);
+				test_helpers.clear_local_storage(browser);
 				browser.get(test_podcast_page);
-				browser.wait(wait_milli_seconds(wait_for_digest));
+				browser.wait(test_helpers.wait_milli_seconds(wait_for_digest));
 			});
 			it("wordpress post should be there, TALK-TO", function() {
 				element(by.id('my_wordpress_post')).click();
@@ -92,9 +79,9 @@ describe('A Topic Podcast -', function () {
 			beforeEach(function() {
 				browser.ignoreSynchronization=true;
 				browser.get(test_podcast_page);                         // firefox bug, has to be here
-				browser.executeScript(clear_local_storage);
+				test_helpers.clear_local_storage(browser);
 				browser.get(test_podcast_page);
-				browser.wait(wait_milli_seconds(wait_for_digest));
+				browser.wait(test_helpers.wait_milli_seconds(wait_for_digest));
 
 			});
 			it("twitter link should be there, TALK-TO", function() {
@@ -112,7 +99,7 @@ describe('A Topic Podcast -', function () {
 	});
 
 	it('should show the type', function () {
-		expect(element(by.id('top_podcast_play')).getText()).toContain(type_text);
+		expect(element(by.name('top_podcast_play')).getText()).toContain(type_text);
 	});
 
 	it('should show the podcast id', function () {

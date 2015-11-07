@@ -4,12 +4,12 @@ console.log('episodes/list-search.js');
 
 describe('Episodes List Pieces -', function testPodcastTypes() {
     var test_home_page = 'mobile_podcasts.html#/';
-    var clear_local_storage = 'window.localStorage.clear();';
+    var test_helpers = require('../testHelpers.js');
     var search_box = '';
 
     beforeEach(function() {
         browser.get(test_home_page);
-        browser.executeScript(clear_local_storage);
+        test_helpers.clear_local_storage(browser);
         browser.get(test_home_page);
         search_box = element(by.id('search_textbox'));
     });

@@ -1,5 +1,3 @@
-
-
 function PodcastLocalInfo() {
     'use strict';
 
@@ -16,12 +14,10 @@ var PODCAST_CONSTANTS = {
 PodcastLocalInfo.prototype = Object.create(LocalStorageValue.prototype, PODCAST_CONSTANTS);
 PodcastLocalInfo.prototype.constructor = PodcastLocalInfo;
 
-
-
 PodcastLocalInfo.prototype.startWaitToScroll = function (anchor_name, $location, $anchorScroll, $interval) {
     'use strict';
 
-    var wait_tenth_seconds_max = 50;
+    var wait_tenth_seconds_max = 50;         // will try for 50*100=5000 milliseconds
     var tenth_seconds = 100;
     this.removeLocalValue('last_podcast_name');
 
@@ -32,7 +28,7 @@ PodcastLocalInfo.prototype.startWaitToScroll = function (anchor_name, $location,
             return;
         }
 
-        var before_scroll_pos = document.body.scrollTop || document.documentElement.scrollTop || 0;
+        var before_scroll_pos = window.scrollY || window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop || 0;
         if (0!==before_scroll_pos){
                 $interval.cancel(stop_wait_to_really_scroll);
         }
@@ -176,5 +172,5 @@ PodcastLocalInfo.prototype.getDurationLength = function (podcast_id) {
 };
 
 var podcast_module = new PodcastLocalInfo();
-//podcast_module.consoleLog();
+
 

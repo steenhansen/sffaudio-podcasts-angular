@@ -7,34 +7,22 @@ describe("The forward/backward buttons should affect the slider position -", fun
 
     //  35:41==35*60+41= 2141 seconds
     var test_podcast_page = 'mobile_podcasts.html#/new-releases-recent-arrivals/012';
-    var clear_local_storage = 'window.localStorage.clear();';
+
     var pre_load_slider_10s = 10000;
     var audio_controls_redraw_wait = 3000;
 
-    var wait_milli_seconds = function makeTimer(wait_milli_secs) {
-        var date_start = new Date();
-        var milli_secs_future = date_start.getTime() + wait_milli_secs;
-        return function () {
-            var date_now = new Date();
-            var milli_secs_now = date_now.getTime();
-            if (milli_secs_future < milli_secs_now) {
-                return true;
-            } else {
-                return false;
-            }
-        };
-    };
+    var test_helpers = require('../testHelpers.js');
 
     beforeEach(function () {
         browser.get(test_podcast_page);
-        browser.executeScript(clear_local_storage);
+        test_helpers.clear_local_storage(browser);
         browser.get(test_podcast_page);
-        browser.wait(wait_milli_seconds(audio_controls_redraw_wait));
+        browser.wait(test_helpers.wait_milli_seconds(audio_controls_redraw_wait));
         element(by.id('my_play_button')).click();
     });
 
     it('pre load slider', function () {
-        browser.wait(wait_milli_seconds(pre_load_slider_10s));
+        browser.wait(test_helpers.wait_milli_seconds(pre_load_slider_10s));
     });
 
     it(", should be at 0 slider position before start", function () {
@@ -51,7 +39,7 @@ describe("The forward/backward buttons should affect the slider position -", fun
         element(by.id('my_forward_30')).click();
         element(by.id('my_forward_30')).click();
         element(by.id('my_play_button')).click();
-        browser.wait(wait_milli_seconds(audio_controls_redraw_wait));
+        browser.wait(test_helpers.wait_milli_seconds(audio_controls_redraw_wait));
         expect(element(by.id('my_progress_slider')).getAttribute('value')).toMatch(0.112);
     });
 
@@ -67,7 +55,7 @@ describe("The forward/backward buttons should affect the slider position -", fun
         element(by.id('my_backward_15')).click();
         element(by.id('my_backward_15')).click();  // 4:00-2:00=2:00
         element(by.id('my_play_button')).click();
-        browser.wait(wait_milli_seconds(audio_controls_redraw_wait));
+        browser.wait(test_helpers.wait_milli_seconds(audio_controls_redraw_wait));
         expect(element(by.id('my_progress_slider')).getAttribute('value')).toMatch(0.056);
     });
 
@@ -78,7 +66,7 @@ describe("The forward/backward buttons should affect the slider position -", fun
         element(by.id('my_forward_120')).click();
         element(by.id('my_forward_120')).click();
         element(by.id('my_play_button')).click();
-        browser.wait(wait_milli_seconds(audio_controls_redraw_wait));
+        browser.wait(test_helpers.wait_milli_seconds(audio_controls_redraw_wait));
         expect(element(by.id('my_progress_slider')).getAttribute('value')).toMatch(0.280);
     });
 
@@ -94,7 +82,7 @@ describe("The forward/backward buttons should affect the slider position -", fun
         element(by.id('my_backward_30')).click();
         element(by.id('my_backward_30')).click();
         element(by.id('my_play_button')).click();
-        browser.wait(wait_milli_seconds(audio_controls_redraw_wait));
+        browser.wait(test_helpers.wait_milli_seconds(audio_controls_redraw_wait));
         expect(element(by.id('my_progress_slider')).getAttribute('value')).toMatch(0.224);
     });
 
@@ -132,7 +120,7 @@ describe("The forward/backward buttons should affect the slider position -", fun
         element(by.id('my_backward_30')).click();
         element(by.id('my_backward_30')).click();
         element(by.id('my_play_button')).click();
-        browser.wait(wait_milli_seconds(audio_controls_redraw_wait));
+        browser.wait(test_helpers.wait_milli_seconds(audio_controls_redraw_wait));
         expect(element(by.id('my_progress_slider')).getAttribute('value')).toMatch(0);
     });
 
@@ -141,7 +129,7 @@ describe("The forward/backward buttons should affect the slider position -", fun
             element(by.id('my_forward_120')).click();   // 17*120 = 2040    2040/2141= 0.9528257823446987
         }
         element(by.id('my_play_button')).click();
-        browser.wait(wait_milli_seconds(audio_controls_redraw_wait));
+        browser.wait(test_helpers.wait_milli_seconds(audio_controls_redraw_wait));
         expect(element(by.id('my_progress_slider')).getAttribute('value')).toMatch(0.953);
     });
 

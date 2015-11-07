@@ -3,10 +3,10 @@ exports.config = {
 
     specs: [
        'directive-audiobook/*.js',
-//      'directive-audiobook/back-forward.js',
-//      'directive-audiobook/links-back.js',
-//      'directive-audiobook/play-pause.js',
-//      'directive-audiobook/slider.js',
+//     'directive-audiobook/back-forward.js',
+//     'directive-audiobook/links-back.js',
+//     'directive-audiobook/play-pause.js',
+//     'directive-audiobook/slider.js',
 //     'directive-audiobook/speed.js',
 
 
@@ -23,13 +23,15 @@ exports.config = {
 //      'episodes/sort.js',
 
 
-        'podcast/*.js'
+        'podcast/*.js',
 //      'podcast/audiobook.js',
 //      'podcast/audiobook-readalong.js',
+//      'podcast/podcast-local-info.js'
 //      'podcast/new-releases.js',
 //      'podcast/readalong.js',
 //      'podcast/talk-to.js',
-//      'podcast/topic.js'
+//      'podcast/topic.js',
+
     ],
 
     capabilities: {

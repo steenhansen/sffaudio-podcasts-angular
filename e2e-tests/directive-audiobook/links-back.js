@@ -4,16 +4,15 @@ console.log('directive-audiobook/links-back.js');
 
 describe('Podcast', function testPodcastTypes() {
 
+	var test_helpers = require('../testHelpers.js');
 
-
-	describe('A Topic Podcast ', function testTopic() {
+	describe('Podcast link backs ', function testTopic() {
 		var home_page_match = "^.*mobile_podcasts.html#\/$";
 		var test_podcast_page = 'mobile_podcasts.html#/new-releases-recent-arrivals/012';
-		var clear_local_storage = 'window.localStorage.clear();';
 
 		beforeEach(function () {
 			browser.get(test_podcast_page);
-			browser.executeScript(clear_local_storage);
+			test_helpers.clear_local_storage(browser);
 			browser.get(test_podcast_page);
 		});
 

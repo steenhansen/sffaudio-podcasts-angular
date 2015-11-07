@@ -34,7 +34,7 @@
 
                   &nbsp;
             <a href="#/{{a_podcast.kind_fragment}}/{{a_podcast.padded_podcast_id}}"
-                  name="podcast_name_{{a_podcast.padded_podcast_id}}"
+               name="podcast_name_{{a_podcast.padded_podcast_id}}" id="podcast_id_{{a_podcast.padded_podcast_id}}"
                onclick="    podcast_module.storeLocalValue('last_podcast_name', this.name);
                             return true; ">
                   <span ng-class="{'highlight-id-sort' : highlight_id_sort}" ng-bind="a_podcast.the_padded_podcast_id"></span></a>

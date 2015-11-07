@@ -4,11 +4,11 @@ console.log('episodes/list-filters.js');
 
 describe('Episodes List Pieces -', function testPodcastTypes() {
 	var test_home_page = 'mobile_podcasts.html#/';
-	var clear_local_storage = 'window.localStorage.clear();';
+	var test_helpers = require('../testHelpers.js');
 
 		it('should have a clear all button', function () {
 			browser.get(test_home_page);
-			browser.executeScript(clear_local_storage);
+			test_helpers.clear_local_storage(browser);
 			browser.get(test_home_page);
 			expect(element(by.id('audio-clear-all'))).toBeDefined(true);
 		});

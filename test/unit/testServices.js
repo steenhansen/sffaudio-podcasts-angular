@@ -18,3 +18,4 @@ describe('participants--service', function() {
         expect(participantsService).toBeDefined();
     }));
 });
+
