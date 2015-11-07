@@ -1,10 +1,12 @@
 {
-  "name": "sff-audio",
-  "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "name": "sffaudio-podcasts-angular",
+  "private": false,
+  "version": "1.0.0",
+  "description": "The SFFaudio Podcast interface",
+  "repository": "https://github.com/steenhansen/sffaudio-podcasts-angular",
   "license": "MIT",
+  "homepage" : "http://www.sffaudio.com/podcasts/the-sffaudio-podcast/#/",
+  "author" : "Steen Hansen <steen_hansen@yahoo.com>",
   "devDependencies": {
     "bower": "^1.3.1",
     "grunt": "^0.4.5",
