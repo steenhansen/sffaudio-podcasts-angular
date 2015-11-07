@@ -15,10 +15,10 @@ describe('scroll -', function () {
     it("to podcast_name_012", function() {
         browser.executeScript(" podcast_module.storeLocalValue('last_podcast_name', 'podcast_name_012');");
         browser.get(home_page_match);
-        browser.wait(test_helpers.wait_milli_seconds(6000)); // 50*100=5000 max wait + 1000 = 6000
+        browser.wait(element(by.id('podcast_id_012')).isPresent());
+        browser.wait(test_helpers.wait_milli_seconds(1000));
         var web_page_scroll_to_012 = browser.executeScript('return window.scrollY;');
         browser.executeScript(" document.getElementById('podcast_id_012').scrollIntoView(); ");
-        browser.wait(test_helpers.wait_milli_seconds(1000));
         var test_scroll_to_012 = browser.executeScript('return window.scrollY;');
         expect(web_page_scroll_to_012).toEqual(test_scroll_to_012);
     });
@@ -30,8 +30,6 @@ describe('scroll -', function () {
         var web_page_no_scroll_0 = browser.executeScript('return window.scrollY;');
         expect(web_page_no_scroll_0).toEqual(0);
     });
-
-
 
 });
 

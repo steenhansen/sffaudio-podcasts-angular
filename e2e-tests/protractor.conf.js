@@ -23,10 +23,10 @@ exports.config = {
 //      'episodes/sort.js',
 
 
-        'podcast/*.js',
+        'podcast/*.js'
 //      'podcast/audiobook.js',
 //      'podcast/audiobook-readalong.js',
-//      'podcast/podcast-local-info.js'
+//      'podcast/podcast-local-info.js',
 //      'podcast/new-releases.js',
 //      'podcast/readalong.js',
 //      'podcast/talk-to.js',
